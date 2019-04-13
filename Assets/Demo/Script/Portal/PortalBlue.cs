@@ -49,8 +49,18 @@ public class PortalBlue : MonoBehaviour
         bool q3 = GameManager.Instance.player.q3;
         bool q4 = GameManager.Instance.player.q4;
 
+        PortalInstantiate(q1, q2, q3, q4);
 
-        if (q1) 
+        //if (PortalII)
+        //{
+        //    Vector3 VectorPositionI = new Vector3(cuadranteI[Random.Range(0, cuadranteI.Length)], -0.2f, PortalII.transform.position.z);
+        //    portalI = Instantiate(portalI, VectorPositionI, Quaternion.identity);
+        //}
+    }
+
+    private void PortalInstantiate(bool q1, bool q2, bool q3, bool q4)
+    {
+        if (q1)
         {
             timeSinceLastSpawned = 0;
 
@@ -81,12 +91,6 @@ public class PortalBlue : MonoBehaviour
             Vector3 VectorPositionII = new Vector3(cuadranteI_IV[Random.Range(0, cuadranteI_IV.Length)], 5f, spawnZPosition);
             PortalII = Instantiate(PortalII, VectorPositionII, Quaternion.identity);
         }
-        //if (PortalII)
-        //{
-        //    Vector3 VectorPositionI = new Vector3(cuadranteI[Random.Range(0, cuadranteI.Length)], -0.2f, PortalII.transform.position.z);
-        //    portalI = Instantiate(portalI, VectorPositionI, Quaternion.identity);
-        //}
     }
 
-    
 }

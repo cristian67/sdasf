@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
             q3 = false;
             q4 = false;
 
-            Debug.Log("Q1");
+            //Debug.Log("Q1");
         }
 
         if (Other.gameObject.tag == "Q2")
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
             q3 = false;
             q4 = false;
 
-            Debug.Log("Q2");
+            //Debug.Log("Q2");
 
         }
 
@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
             q3 = true;
             q4 = false;
 
-            Debug.Log("Q3");
+            //Debug.Log("Q3");
 
         }
 
@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
             q3 = false;
             q4 = true;
 
-            Debug.Log("Q4");
+            //Debug.Log("Q4");
 
         }
     }     
