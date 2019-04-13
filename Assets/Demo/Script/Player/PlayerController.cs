@@ -17,6 +17,11 @@ public class PlayerController : MonoBehaviour
     public GameObject targetGreen;
 
 
+    public bool q1;
+    public bool q2;
+    public bool q3;
+    public bool q4;
+
     public float speed = 5f;
     // Start is called before the first frame update
     void Start()
@@ -79,39 +84,56 @@ public class PlayerController : MonoBehaviour
         _transform.position = position;
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider Other)
     {
-        SelectorQuadrant(other);
+        SelectorQuadrantI(Other);
     }
 
-    private void SelectorQuadrant(Collider other)
+
+    public void SelectorQuadrantI(Collider Other)
     {
-        if (other.gameObject.tag == "Q1")
+
+        if (Other.gameObject.tag == "Q1")
         {
-            //Debug.Log("Estas en el Q1");
-            NumPortalRange = Random.Range(1, 3);
+            q1 = true;
+            q2 = false;
+            q3 = false;
+            q4 = false;
+
+            Debug.Log("Q1");
         }
 
-        if (other.gameObject.tag == "Q2")
+        if (Other.gameObject.tag == "Q2")
         {
-            //numbersIndexPortal = new int[] { 0, 2, 3 };
-            Debug.Log("Estas en el Q2");
-            NumPortalRange = numbersIndexPortal[Random.Range(0, numbersIndexPortal.Length)];
+            q1 = false;
+            q2 = true;
+            q3 = false;
+            q4 = false;
+
+            Debug.Log("Q2");
 
         }
 
-        if (other.gameObject.tag == "Q3")
+        if (Other.gameObject.tag == "Q3")
         {
-            numbersIndexPortal = new int[] { 0, 1, 3 };
-            //Debug.Log("Estas en el Q3");
-            NumPortalRange = numbersIndexPortal[Random.Range(0, numbersIndexPortal.Length)];
-        }
+            q1 = false;
+            q2 = false;
+            q3 = true;
+            q4 = false;
 
-        if (other.gameObject.tag == "Q4")
-        {
-            //Debug.Log("Estas en el Q4");
-            NumPortalRange = Random.Range(0, 2);
+            Debug.Log("Q3");
 
         }
-    }
+
+        if (Other.gameObject.tag == "Q4")
+        {
+            q1 = false;
+            q2 = false;
+            q3 = false;
+            q4 = true;
+
+            Debug.Log("Q4");
+
+        }
+    }     
 }

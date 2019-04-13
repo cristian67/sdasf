@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
-    private List<float> cuadranteI = new List<float> { -1.6f, 0, 1.6f, 3.2f };
+    private List<float> cuadranteI   = new List<float> { -1.6f, 0, 1.6f, 3.2f };
+    private List<float> cuadranteII  = new List<float> { 1.8f, 3.4f}; //-1.9
+   // Q3 X = 3.4
+   // Q4  Y = 5
+
     private float number;
 
     private Transform _transform;
