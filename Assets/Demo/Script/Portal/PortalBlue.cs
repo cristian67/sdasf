@@ -64,7 +64,7 @@ public class PortalBlue : MonoBehaviour
         {
             timeSinceLastSpawned = 0;
 
-            Vector3 VectorPositionII = new Vector3(cuadranteI_IV[Random.Range(0, cuadranteI_IV.Length)], -0.2f, spawnZPosition);
+            Vector3 VectorPositionII = new Vector3(cuadranteI_IV[Random.Range(0, cuadranteI_IV.Length)], 0.5f, spawnZPosition);
             PortalII = Instantiate(PortalII, VectorPositionII, Quaternion.identity);
         }
 

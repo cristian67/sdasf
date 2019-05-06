@@ -5,19 +5,22 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
     private List<float> cuadranteI_IV   = new List<float> { -1.6f, 0, 1.6f, 3.2f };
-    private List<float> cuadranteI_IV_Y = new List<float> { 0, 5 };
-    private List<float> cuadranteII_III = new List<float> { 1.8f, 3.4f};
+    private List<float> cuadranteI_IV_Y = new List<float> { 0, 4.5f};
+    private List<float> cuadranteII_III = new List<float> { 1.5f, 2.6f};
 
-    private List<float> cuadranteII_III_X = new List<float> { -1.8f, 3.6f };
+    private List<float> cuadranteII_III_X = new List<float> { -1.8f, 3.6f};
 
 
     private float numberX;
     private float numberY;
 
     private Transform _transform;
+    private AudioSource _audioSource;
 
     private void Start()
     {
+        _audioSource = GetComponent<AudioSource>();
+
         _transform = GetComponent<Transform>();
         numberX = (float)_transform.position.x;
         numberY = (float)_transform.position.y;
@@ -68,7 +71,7 @@ public class Teleport : MonoBehaviour
 
         int random = Random.Range(0, 2);
 
-        Debug.Log(random);
+        //Debug.Log(random);
 
         if (other.gameObject.tag == "Player")
         { 
@@ -78,16 +81,19 @@ public class Teleport : MonoBehaviour
                     ExtractionPointQ1Q4();
                     ExtractionPointQ1Q4Y();
                     GameManager.Instance.player.Teleport(new Vector3(numberX, numberY, 0));
+                    _audioSource.Play();
                     break;
                 case 2:
                     ExtractionPointQ2Q3();
                     ExtractionPointQ2Q3X();
                     GameManager.Instance.player.Teleport(new Vector3(numberX, numberY, 0));
+                    _audioSource.Play();
                     break;
                 default:
                     ExtractionPointQ2Q3();
                     ExtractionPointQ2Q3X();
                     GameManager.Instance.player.Teleport(new Vector3(numberX, numberY, 0));
+                    _audioSource.Play();
                     break;
             }    
         }
